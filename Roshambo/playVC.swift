@@ -15,27 +15,29 @@ class playVC: UIViewController {
     @IBOutlet weak var scissorsButton: UIButton!
     @IBOutlet weak var playLabel: UILabel!
     
-  
-    var compMove = UInt32()
- 
+    var resultOption = Int()
+
     
     @IBAction func chooseRock() {
         print("Player Choose Rock")
-        compMove = arc4random() % 3
+        resultOption = 0
         let rockVC = self.storyboard?.instantiateViewController(withIdentifier: "resultsVC") as! resultsVC
-        switch compMove {
-        case 0: print("Computer Choose Rock")
-            rockVC.resultImageView.image = #imageLiteral(resourceName: "itsATie")
-            rockVC.resultLabel.text = "It's A Tie!"
-        case 1: print("Computer Choose Paper")
-            rockVC.resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
-            rockVC.resultLabel.text = "You Loose! Paper Covers Rock!"
-        case 2: print("Computer Choose Scissors")
-            rockVC.resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
-            rockVC.resultLabel.text = "You Win! Rock Crushes Scissors!"
-        default: print("Error")
+//        compMove = arc4random() % 3
+//        switch compMove {
+//        case 0: print("Computer Choose Rock")
+//            resultImage = #imageLiteral(resourceName: "itsATie")
+//            resultString = "It's a Tie!"
+//        case 1: print("Computer Choose Paper")
+//            resultImage = #imageLiteral(resourceName: "PaperCoversRock")
+//            resultString = "You Loose! Paper Covers Rock!"
+//        case 2: print("Computer Choose Scissors")
+//            resultImage = #imageLiteral(resourceName: "RockCrushesScissors")
+//            resultString = "You Win! Rock Crushes Scissors!"
+//        default: print("Error")
 
-        }
+        //}
+//        rockVC.resultImageView.image = resultImage
+//        rockVC.resultLabel.text = resultString
         present(rockVC, animated: true, completion: nil)
         
         
@@ -44,25 +46,40 @@ class playVC: UIViewController {
     }
     @IBAction func choosePaper(){
         print("Player Choose Paper")
-        compMove = arc4random() % 3
-        switch compMove {
-        case 0: print("Computer Choose Rock")
-        case 1: print("Computer Choose Paper")
-        case 2: print("Computer Choose Scissors")
-        default: print("Error")
+        performSegue(withIdentifier: "choosePaper", sender: self)
+        resultOption = 2
+//        compMove = arc4random() % 3
+//        switch compMove {
+//        case 0: print("Computer Choose Rock")
+//            resultImage = #imageLiteral(resourceName: "PaperCoversRock")
+//            resultString = "You Win! Paper Covers Rock!"
+//        case 1: print("Computer Choose Paper")
+//            resultImage = #imageLiteral(resourceName: "itsATie")
+//            resultString = "It's A Tie!"
+//        case 2: print("Computer Choose Scissors")
+//            resultImage = #imageLiteral(resourceName: "ScissorsCutPaper")
+//            resultString = "You Loose! Scissors Cut Paper!"
+//        default: print("Error")
        
-        }
+        //}
     }
     @IBAction func chooseScissors(){
         print("Player Choose Scissors")
-        compMove = arc4random() % 3
-        switch compMove {
-        case 0: print("Computer Choose Rock")
-        case 1: print("Computer Choose Paper")
-        case 2: print("Computer Choose Scissors")
-        default: print("Error")
-            
-        }
+        resultOption = 3
+//        compMove = arc4random() % 3
+//        switch compMove {
+//        case 0: print("Computer Choose Rock")
+//            resultImage = #imageLiteral(resourceName: "RockCrushesScissors")
+//            resultString = "You Loose! Rock Crushes Scissors!"
+//        case 1: print("Computer Choose Paper")
+//            resultImage = #imageLiteral(resourceName: "ScissorsCutPaper")
+//            resultString = "You Win! Scissors Cut Paper!"
+//        case 2: print("Computer Choose Scissors")
+//            resultImage = #imageLiteral(resourceName: "itsATie")
+//            resultString = "It's A Tie!"
+//        default: print("Error")
+//            
+//        }
         
     }
 

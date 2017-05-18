@@ -8,43 +8,80 @@
 
 import UIKit
 
+
+
 class resultsVC: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var playAgainButton: UIButton!
+
+    var playVC2 = playVC()
     
 
 
-//    @IBAction func displayResults (){
-//        var computerMove = arc4random() % 3
-//        if computerMove == 1{
-//            if playVC.playerMove == 1 {
-//                resultImageView.image = #imageLiteral(resourceName: "itsATie")
-//                resultLabel.text = "It's a Tie!"
-//            }
-//            if playVC.playerMove == 2 {
-//                resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
-//                resultLabel.text = "You win! Paper Covers Rock!"
-//            }
-//            if playVC.playermove == 3 {
-//                resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
-//                resultLabel.text = "You Lose! Rock Crushes Scissors!"
-//            }
-//            
-//            }
-//        if computerMove == 2 {
-//            if playVC.chooseRock(<#T##playVC#>){
-//                
-//            }
-//        }
-//        }
+     func rockResults() {
         
-    
+        let compMove = arc4random() % 3
+        switch compMove {
+        case 0: print("Computer Choose Rock")
+            resultImageView.image = #imageLiteral(resourceName: "itsATie")
+            resultLabel.text = "It's a Tie!"
+        case 1: print("Computer Choose Paper")
+            resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
+            resultLabel.text = "You Loose! Paper Covers Rock!"
+        case 2: print("Computer Choose Scissors")
+            resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
+            resultLabel.text = "You Win! Rock Crushes Scissors!"
+        default: print("Error")
+        
+    }
+    }
+    func paperResults () {
+        let compMove = arc4random() % 3
+        switch compMove {
+        case 0: print("Computer Choose Rock")
+            resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
+            resultLabel.text = "You Win! Paper Covers Rock!"
+        case 1: print("Computer Choose Paper")
+            resultImageView.image = #imageLiteral(resourceName: "itsATie")
+            resultLabel.text = "It's A Tie!"
+        case 2: print("Computer Choose Scissors")
+            resultImageView.image = #imageLiteral(resourceName: "ScissorsCutPaper")
+            resultLabel.text = "You Loose! Scissors Cut Paper!"
+        default: print("Error")
 
+    }
+    }
+    func scissorsResults () {
+        let compMove = arc4random() % 3
+        switch compMove {
+        case 0: print("Computer Choose Rock")
+        resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
+        resultLabel.text = "You Loose! Rock Crushes Scissors!"
+        case 1: print("Computer Choose Paper")
+        resultImageView.image = #imageLiteral(resourceName: "ScissorsCutPaper")
+        resultLabel.text = "You Win! Scissors Cut Paper!"
+        case 2: print("Computer Choose Scissors")
+        resultImageView.image = #imageLiteral(resourceName: "itsATie")
+        resultLabel.text = "It's A Tie!"
+        default: print("Error")
+            
+        }
     
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        switch playVC2.resultOption {
+        case 0:
+            rockResults()
+        case 1:
+            paperResults()
+        case 2:
+            scissorsResults()
+        default:
+            print("Error!")
+        }
 
         // Do any additional setup after loading the view.
     }
