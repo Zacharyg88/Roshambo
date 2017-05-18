@@ -17,8 +17,11 @@ class resultsVC: UIViewController {
 
     var playVC2 = playVC()
     
-
-
+    @IBAction func playAgain() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Different Results
      func rockResults() {
         
         let compMove = arc4random() % 3
@@ -70,6 +73,7 @@ class resultsVC: UIViewController {
     
     }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         switch playVC2.resultOption {
@@ -82,6 +86,7 @@ class resultsVC: UIViewController {
         default:
             print("Error!")
         }
+        
 
         // Do any additional setup after loading the view.
     }
