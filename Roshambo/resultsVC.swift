@@ -24,17 +24,17 @@ class resultsVC: UIViewController {
     // Different Results
      func rockResults() {
         
-        let compMove = arc4random() % 3
-        switch compMove {
-        case 0: print("Computer Choose Rock")
-            resultImageView.image = #imageLiteral(resourceName: "itsATie")
-            resultLabel.text = "It's a Tie!"
-        case 1: print("Computer Choose Paper")
-            resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
-            resultLabel.text = "You Loose! Paper Covers Rock!"
-        case 2: print("Computer Choose Scissors")
-            resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
-            resultLabel.text = "You Win! Rock Crushes Scissors!"
+//        let compMove = arc4random() % 3
+//        switch compMove {
+//        case 0: print("Computer Choose Rock")
+//            resultImageView.image = #imageLiteral(resourceName: "itsATie")
+//            resultLabel.text = "It's a Tie!"
+//        case 1: print("Computer Choose Paper")
+//            resultImageView.image = #imageLiteral(resourceName: "PaperCoversRock")
+//            resultLabel.text = "You Loose! Paper Covers Rock!"
+//        case 2: print("Computer Choose Scissors")
+//            resultImageView.image = #imageLiteral(resourceName: "RockCrushesScissors")
+//            resultLabel.text = "You Win! Rock Crushes Scissors!"
         default: print("Error")
         
     }
